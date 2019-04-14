@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang = "fr">
+   <head>
+       <meta charset="utf-8">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+           <!-- liaison avec le CSS téléchargé de Bootstrap -->
+       <link href="css/bootstrap.min.css" rel="stylesheet">
+           <!-- liaison avec JQuery (CDN Google) -->
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+           <!-- Appel du JavaScript téléchargé de Bootstrap -->
+       <script src="js/bootstrap.min.js"></script>
+       <title>Ma page 1</title>
+	   <link rel="stylesheet" href="style.css"/>
+	   <script>
+	     function direBonjour(prenom) {
+		   const message = `Bonjour, ${prenom} !<br/>`;
+		   return message;
+		   }document.write(direBonjour("PAUL"));
+		   document.write(direBonjour("DESIRE"));
+		   
+		 const carre = function() {
+		   const nb = Number(prompt("Saisir un nombre SVP !"));
+	       const calculer = nb*nb;
+		   return calculer;
+		   }
+		   document.write(carre());
+	   </script>
+	</head>
+    <body>
+	  <p>Ceci est ma page 1</p>
+	   <p>Ce paragraphe contient un lien vers la<a href="page2.html">Page 2 </a> </p>
+	    <p>Ce paragraphe contient un lien vers la<a href="liens_sous/page3.html">Page 3 </a> </p>
+		 <p>Ceparagraphe contient un lien vers la <a href="../page4.html">page 4  </a></p>
+		  <p>Visitez le site <a href="http://www.gospelvisioninternational.com" target="_blank">GVI </a></p>
+		   <p>Pour aller à 7CDN immédiatement, <a href="#ancre7CDN">cliquer ici </a></p>
+		    <p>Contactez moi par <a href="mailto:levraidesire@gmail.com">mail.</a></p> 
+			<p>Telecharger ce <a href="Baccalauree">fichier PDF</a></p>
+	   <script>	 // Les Trois Mousquetaires
+	     const mousquetaires = [ " Athos "," Porthos "," Aramis "]; //creation du tableau
+		 document.write( " Voici les Trois Mousquetaires: " );
+		 for ( var i = 0 ; i < mousquetaires.length; i++ ) { //utilisation de la boucle for
+		   document.write("Nom:"+mousquetaires [i] );
+		 }
+		 
+		 mousquetaires.push(" D'Artagnan "); //Ajout d un element au debut du tableau
+		   document.write ( " Ils sont quatre à présent: " );
+		   
+         mousquetaires.forEach ( mousquetaire => { //utilisation de la boucle forEach
+		   document.write("Nom:" +mousquetaire);
+		 });
+		 
+         mousquetaires.splice ( 2 , 1 ); //suppression du dernier element du tableau
+		   document.write ( " Le pauvre Aramie est mort ... " );
+         for ( const mousquetaire of mousquetaires) {
+           document.write(mousquetaire);
+         }		   
+	  
+	  </script>
+		   <p>
+		    2. 2. Utilisation et personnalisation Avant d'aborder l'utilisation des styles, revenons sur la notion de  dont vous avez été inviter a CDN visiter le lien dans la leçon d'introduction a Bootstrap. Un  est une plate-forme de serveurs hautement distribuée optimisée pour diffuser du contenu, CDN notamment des applications Web et du contenu multimédia en streaming. <br/> En gros, il va nous permettre de récupérer les fichiers nécessaires à la bonne utilisation de Bootstrap directement sur des serveurs sur Internet. Il devient ainsi inutile de prévoir ces librairies sur son propre serveur, il suffit de « pointer » vers ceux des . Il y a des avantages à utiliser un  :<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> <p h2 id="ancre7CDN">97CDN</h2>CDN Libération de ressources et de la bande passante sur son propre serveur ; Parallélisation des téléchargements (un  est sur plusieurs serveurs) ; CDN Accélération du chargement ; Diminution de la latence ; Actualisation automatique des librairies ; Amélioration du référencement... Le seul hic est que vous avez besoin d'Internet pour pouvoir utiliser cette façon de faire. Si vous utilisez des , l'installation en est d'autant simplifiée. Vous n'avez qu'à adapter les appels CDN des librairies ,  et  qui sont founis sur le site de téléchargement de bootstrap ou CSS JQuery JavaScript de téléchargement des styles Bootstrap.</p>
+			</p>
+	   
+	   <script> //Definition de classe
+         class Personnage {
+		    constructor (nom, sante, force) {
+			  this.nom = nom;
+			  this.sante = sante;
+			  this.force = force;
+			  this.xp = 0; //Toujours 0 au debut
+			} 
+
+           //Attaque une cible...
+           	attaquer (cible) {
+              if (this.sante > 0) {
+                const degats = this.force;
+                document.write(
+                  `${this.nom} attaque ${
+				    cible.nom
+				   } et lui ilflige ${degats} points de dégâts`
+				);
+				cible.sante -= degats;
+				if (cible.sante > 0) {
+				  document.write(`${cible.nom} a encore ${cible.sante} points de vie`);
+				} else {
+				  cible.sante = 0;
+				  const bonusXP = 10;
+				  document.write(`${this.nom} a tué ${cible.nom} et gagne ${bonusXP} points d'expérience`);
+				  this.xp += bonusXP;
+				 }
+               } else {
+                 document.write(`${this.nom} n'a plus de points de vie et ne peux pas attaquer`);
+			   }
+            }	
+             //Renvoie la description du personnage
+            decrire() {
+              return `${this.nom} a ${this.sante} points de vie, ${this.force} en force et ${this.xp} points d'expérience`;
+            }
+         }
+		 const aurora = new Personnage("Aurora", 150, 25);
+		 const glacius = new Personnage("Glacius", 130, 30);
+		 
+		 document.write("BIENVENUE DANS CE JEU D'AVENTURE ! Voici nos courageux héros :");
+		 document.write(aurora.decrire());
+		 document.write(glacius.decrire());
+		 
+		 const monstre = new Personnage("ZogZog", 40, 20);
+		 document.write(`Un affreux monstre arrive : il s'appelle ${monstre.nom}`);
+		 
+		 monstre.attaquer(aurora);
+		 monstre.attaquer(glacius);
+		 aurora.attaquer(monstre);
+		 glacius.attaquer(monstre);
+		 
+		 document.write(aurora.decrire());
+		 document.write(glacius.decrire());
+		 
+	   </script>		
+    </body>
+</html>	

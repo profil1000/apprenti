@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang = "fr">
+   <head>
+       <meta charset="utf-8">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+           <!-- liaison avec le CSS téléchargé de Bootstrap -->
+       <link href="css/bootstrap.min.css" rel="stylesheet">
+           <!-- liaison avec JQuery (CDN Google) -->
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+           <!-- Appel du JavaScript téléchargé de Bootstrap -->
+       <script src="js/bootstrap.min.js"></script>
+       <title>Ma page 2</title>
+	   <script>
+	   const chien = {
+         nom : "Crockdur",
+         race : "mâlin de Naples",
+         taille : 75,
+  
+         aboyer() {
+           return "Grrr ! Grrr !";
+         }
+  
+       };
+
+        // "Crockdur est un mâtin de Naples mesurant 75 cm"
+       document.write(`${chien.nom} est un ${chien.race} mesurant ${chien.taille} cm`);
+
+       // "Tiens, un chat ! Crockdur aboie : Grrr ! Grrr !"
+      document.write(`Tiens, un chat ! ${chien.nom} aboie : ${chien.aboyer()}`);
+       </script>
+	   <script>
+	    const nombre = Number(prompt("Entrez un nombre SVP !"));
+	    if ((nombre >= 0) && (nombre <= 100)) { //mise en evidense du connecteur logique ET
+	      document.write(nombre + " est compris dans [0-100].");
+	    }
+	    if ((nombre < 0) || (nombre >100)) {	//mise en evidense du connecteur logique OU
+	      document.write(nombre + " est en dehors de [0-100].");
+	    }
+		if (!(nombre > 100)) {
+		  document.write(nombre + " inferieur ou egal à 100.");
+		}
+	  
+	   </script> 
+	</head>
+    <body>
+       <script>
+		 const aurora = {
+           nom : "Aurora",
+           sante : 150,
+           force : 25,
+		   xp : 0,
+		   
+           decrire () {
+             return `${this.nom} a ${this.sante} points de vie, ${this.force} en force et ${this.xp} points d'expérience`;  
+           }
+		 };
+         
+         // "Aurora a 150 points de vie, 25 en force et 0 points d'expérience"
+         document.write(aurora.decrire());
+         
+         document.write("Aurora apprend une nouvelle compétence");
+         aurora.xp += 15;
+         
+         // "Aurora a 150 points de vie, 25 en force et 15 points d'expérience"
+         document.write(aurora.decrire());
+	   </script>
+	   
+	  <p>Ceci est ma deuxieme page </p>
+	   <script>
+         // Somme des valeurs
+         
+		 const  nombres  = [ 11 , 3 , 7 , 2 , 9 , 10 ];
+
+         var somme =  0 ;
+
+         // Solution avec la méthode for - of ()
+         for ( const nombre of nombres ) {
+		    somme += nombre ;
+		 }
+		 document.write(somme);
+		</script> 
+		         Maximum d'un tableau
+        <script>
+		
+         const valeurs = [3, 11, 7, 2, 9, 10];
+
+         // On initialise le maximum avec le 1er élément du tableau
+          let max = valeurs[0];
+
+         // On commence la recherche au second élément (indice 1)
+          for (let i = 1; i < valeurs.length; i++) {
+         // Si la valeur courante est supérieure au maximum actuel...
+             if (valeurs[i] > max) {
+         // ... Elle devient le nouveau maximum
+             max = valeurs[i];
+             }
+          }
+
+         document.write(max);
+	   </script>
+	   
+	   
+    </body>
+</html>	

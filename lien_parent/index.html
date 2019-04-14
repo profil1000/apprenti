@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang = "fr">
+   <head>
+       <meta charset="utf-8">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+           <!-- liaison avec le CSS téléchargé de Bootstrap -->
+       <link href="css/bootstrap.min.css" rel="stylesheet">
+           <!-- liaison avec JQuery (CDN Google) -->
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+           <!-- Appel du JavaScript téléchargé de Bootstrap -->
+       <script src="js/bootstrap.min.js"></script>
+       <title>Ma page princiaple</title>
+	   <link rel="stylesheet" href="mapage1.css"/>
+	   
+   </head>
+   <body>
+     
+    <h1 style="color:blue;">Ceci est mon premier titre </h1>
+	<h2>Ceci est un autre titre </h2>
+	<h3>Ceci est un  <span class="mottitre">titre</span> de niveau 3 </h3>
+	<!-- Ceci est un commentaire -->
+       <p class="premierp"> Ceci est mon <br /> premier paragraphe.</p >
+	   <p id="deuxiemep">Ceci <em>est</em> un <mark>autre</mark> <strong>paragraphe</strong></p>
+	    <ul>
+		   <li class="premierp">Fraise</li>
+		   <li>Route</li>
+		   <li>Maison</li>
+		</ul>
+
+        <ol>
+            <li class="premierp">Introduction</li>
+            <li>Developpement</li>
+            <li>Conclusion</li>
+        </ol>		
+
+        <dl>
+           <dt>HTML</dt>
+           <dd>CSS</dd>
+        </dl>			
+
+        <ol>
+            <li>Natation
+			   <ul>	
+			      <li>Maillot</li>
+				  <li>Bonnet</li>
+				  <li>Lunettes</li>	
+               </ul>				   
+			</li>
+            <li>Velo</li>
+            <li>Course à pied</li>	<br/><br/><br/><br/><br/><br/><br/><br/>
+
+			
+     <script>
+	     var meteo = prompt("Quel temps fait-il en ce moment ?");
+		   switch(meteo) {
+		     case "soleil" :
+			   document.write(" Porter un tee-shirt SVP !");
+			 break;
+			 case "vent" :
+			   document.write(" Porter un pull SVP !");
+			 break;
+             case "pluie" :
+               document.write(" Porter un blouson SVP !");
+             break;
+             case "neige" :
+               document.write(" Rester au chaud SVP !");
+             break;			   
+			 default :
+			   document.write(" A vous de choisir");
+		   }   
+	  </script>		
+   <!-- Pour ouvrir la commande de python taper C:\Users\KOFFI PAUL\AppData\Local\Programs\Python\Python37-32\python.exe -->
+  </body>
+</html>
+

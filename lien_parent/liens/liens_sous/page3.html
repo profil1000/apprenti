@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang = "fr">
+   <head>
+       <meta charset="utf-8">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+           <!-- liaison avec le CSS téléchargé de Bootstrap -->
+       <link href="css/bootstrap.min.css" rel="stylesheet">
+           <!-- liaison avec JQuery (CDN Google) -->
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+           <!-- Appel du JavaScript téléchargé de Bootstrap -->
+       <script src="js/bootstrap.min.js"></script>
+       <title>Ma page 3</title>
+	   <script>
+         const nombre = Number(prompt("Entrez un nombre SVP !"));
+           if (nombre > 0) { //nombre superieur a zero									
+		     document.write(nombre +" est positif.");
+           }		   
+		   else if (nombre < 0) { //nombre inferieur a zero
+		     document.write(nombre +" est négatif.");
+		   }
+		   else { //nombre egal a zero
+		     document.write(nombre +" est nul.");
+		   }
+	   </script>
+	   <script>
+	     document.write(Math.min(12,4));
+		  document.write(Math.min(5,5));
+		   document.write(Math.min(90,100));
+	   </script>
+     		
+		   
+	</head>
+    <body>
+	  <p>Ceci est ma troisieme page </p>
+	<script> 	//	FizzBizz
+    for (let nombre = 1; nombre <=100; nombre++){
+      if (nombre % 3 === 0 && nombre % 5 === 0) document.write("FIZZBUZZ");
+      else if (nombre % 5 ===0) document.write("BIZZ"); 
+      else if (nombre % 3 === 0) document.write("FIZZ");
+      else document.write(nombre);
+    } 
+ 	</script>
+	<script>
+	  const nbTours = 10;
+	  document.write("Le manège tourne");
+	  for (let tour = 1; tour <= nbTours; tour++) {
+	    document.write("C'est le tour "+tour );
+	  }
+      document.write("Le manège s'arrête");	  
+	  
+	</script>
+	<script> //tour de manège
+    let tour = 1;
+	  while (tour <= nbTours) {
+	    document.write(`C'est le tour Numero ${tour}`);
+	    tour++;
+	  }
+      document.write("Le manège s'arrête");	
+	</script>
+    <script> //tabele de multiplication
+	  const nb = 7;
+	  document.write(`Table de multiplication de ${nb}`);
+	  let i	= 1;
+	  while ( i <= 10) {
+	    document.write(`${nb} x ${i} = ${ nb * i}`);
+		i++;
+	  }
+    </script>
+    <script>
+      class Chien {
+	    constructor ( nom, type, taille) {
+		  this.nom = nom;
+		  this.type = type;
+		  this.taille = taille;
+		}
+        decrire() {
+		  return `${this.nom} est un ${this.type} mesurant ${this.taille} cm`;
+		}
+		
+		aboyer () {
+		  if ( this.taille > 50) {
+		  return ` Grrr ! Grrr!`;
+		  } else { 
+		    this.taille < 50;
+		    return ` Wouaf ! Wouaf !`;
+		  }
+		}
+	  }  
+          		  
+		  
+       const crockdur = new Chien("Crockdur", "mâtin de Naples", 75);
+     // "Crockdur est un mâtin de Naples mesurant 75 cm"
+       document.write(crockdur.decrire());
+     // "Tiens, un chat ! Crockdur aboie : Grrr ! Grrr !"
+       document.write(`Tiens, un chat ! ${crockdur.nom} aboie : ${crockdur.aboyer()}`);
+
+       const milou = new Chien("Milou", "fox-terrier", 26);
+     // "Milou est un fox-terrier mesurant 26 cm"
+       document.write(milou.decrire());
+     // "Tiens, un chat ! Milou aboie : Wouaf ! Wouaf !"
+       document.write(`Tiens, un chat ! ${milou.nom} aboie : ${milou.aboyer()}`);
+    </script>
+    // Gestion de l'inventaire
+    <script>
+      class Personnage {
+        constructor(nom, sante, force) {
+          this.nom = nom;
+          this.sante = sante;
+          this.force = force;
+          this.xp = 0; // Toujours 0 au début
+    // l'inventaire est géré sous la forme d'un objet ayant deux propriétés
+          this.inventaire = {
+            or: 10,
+            cles: 1
+          };
+        }
+    // Attaque une cible
+        attaquer(cible) {
+        if (this.sante > 0) {
+          const degats = this.force;
+            document.write(
+              `${this.nom} attaque ${
+                cible.nom
+                 } et lui inflige ${degats} points de dégâts`
+            );
+          cible.sante -= degats;
+        if (cible.sante > 0) {
+           document.write(`${cible.nom} a encore ${cible.sante} points de vie`);
+        } else {
+          cible.sante = 0;
+          const bonusXP = 10;
+            console.log(
+             `${this.nom} a tué ${
+             cible.nom
+             } et gagne ${bonusXP} points d'expérience, ${
+             cible.inventaire.or
+            } pièces d'or et ${cible.inventaire.cles} clé(s)`
+            );
+           this.xp += bonusXP;
+    // L'inventaire de la victime est transféré à son vainqueur
+           this.inventaire.or += cible.inventaire.or;
+           this.inventaire.cles += cible.inventaire.cles;
+         }
+        } else {
+           document.write(
+             `${this.nom} n'a plus de points de vie et ne pas pas attaquer`
+           );
+          }
+     }
+    // Renvoie la description du personnage
+     decrire() {
+       return `${this.nom} a ${this.sante} points de vie, ${
+        this.force
+        } en force et ${this.xp} points d'expérience, ${
+        this.inventaire.or
+      } pièces d'or et ${this.inventaire.cles} clé(s)`;
+
+
+    // "Aurora a 150 points de vie, 25 en force et 0 points d'expérience, 10 pièces d'or et 1 clé(s)"
+     const aurora = new Personnage("Aurora", 150, 25);
+
+       document.write(aurora.decrire());
+
+     const monstre = new Personnage("ZogZog", 20, 10);
+     monstre.attaquer(aurora);
+     aurora.attaquer(monstre); // Le monstre est tué
+
+    // "Aurora a 140 points de vie, 25 en force et 10 points d'expérience, 20 pièces d'or et 2 clé(s)"
+       document.write(aurora.decrire());
+      </script>
+	  
+	   <script>
+			class CompteBancaire  {
+			  constructor ( titulaire ) {
+                this.titulaire : titulaire;
+                this.solde : 0;
+			  }
+			  
+              crediter(montant) {
+                this.solde += montant;
+              }
+  
+              decrire() {
+                return `Titulaire : ${this.titulaire}, solde : ${this.solde}`;
+              }
+            }
+      	
+			  const listeComptes = [];
+			    
+			  listeComptes.push(new CompteBancaire("Alex"));
+			  listeComptes.push(new CompteBancaire("Clovis"));
+		      listeComptes.push(new CompteBancaire("Marco"));
+			
+              listeComptes.forEach(compte => {			
+			    compte.crediter(1000);
+                document.write(compte.decrire());
+			  } );
+       </script>
+    </body>
+</html>	
